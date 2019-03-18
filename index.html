@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Practica1 Seminario1</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet">
+</head>
+
+<body class="light-green accent-2">
+  <nav class="grey darken-1 lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">New game</a>
+      <ul class="right ">
+        <li><a class="waves-effect waves-light btn-flat white-text"><i class="material-icons left">list</i>juegos</a></li>
+      </ul>
+      <ul class="right ">
+        <li><a class="waves-effect waves-light btn-flat white-text"><i class="material-icons left">add</i>juegos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <div class="row center">
+        <h5 class="header col s12 light ">La mejor tienda en linea de video juegos! </h5>
+      </div>
+      <div class="carousel carousel-slider">
+        <a class="carousel-item" href="#one!"><img src="https://www.frikipandi.com/wp-content/uploads/2018/01/GOW-Edici%C3%B3n-Digital-Deluxe-660x330.jpg"></a>
+        <a class="carousel-item" href="#two!"><img src="https://cinefriki.com/wp-content/uploads/2018/11/5a4f70245bafe36692123392.jpg"></a>
+        <a class="carousel-item" href="#three!"><img src="https://i.blogs.es/97329b/call-of-duty-black-ops-4-03/450_1000.jpg"></a>
+        <a class="carousel-item" href="#four!"><img src="https://i.gadgets360cdn.com/large/super_smash_bros_ultimate_nintendo_switch_cover_1534157121839.jpg"></a>
+      </div>
+      <br><br>  
+      <div class="row center">
+        <h5 class="header col s12 light ">poneme 100 ya!</h5>
+      </div>
+      <br><br>
+    </div>
+  </div>
+
+  <!--  Scripts-->
+  
+  <script src="js/materialize.js"></script>
+  <script src="js/jquery.js"></script>
+
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.carousel');
+      var instances = M.Carousel.init(elems,{
+        fullWidth: true,
+        indicators: true
+      });
+    });
+  </script>
+
+  </body>
+</html>
