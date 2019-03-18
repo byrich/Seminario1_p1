@@ -7,12 +7,12 @@
 	if ($conn->connect_error) {
 		die('error de conecion '. $conn-> connect_error);
 	}
-	$sql = "SELECT id, firstname FROM prueba";
+	$sql = "SELECT * FROM Juegos";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 	    // output data of each row
 	    while($row = $result->fetch_assoc()) {
-	        echo "id: " . $row["id"]. " - Name: " . $row["firstname"] . " <br>";
+	        echo "nombre: " . $row["nombre"]. " - compañia: " . $row["compania"] . " - url: " . $row["img_url"]. " <br>";
 	    }
 	} else {
 	    echo "0 results";
