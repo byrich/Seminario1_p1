@@ -30,7 +30,7 @@
 	    echo "¡Posible ataque de subida de ficheros!\n";
 	}
 
-	header("Location: http://ec2-3-17-11-100.us-east-2.compute.amazonaws.com/subirImg.html");
+	header("Location: http://ec2-3-17-11-100.us-east-2.compute.amazonaws.com/vistas/addJuegos.html");
 	die();
 	//print_r($_FILES);
 
