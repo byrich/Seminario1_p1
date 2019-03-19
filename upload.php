@@ -1,5 +1,8 @@
 <?php
 
+	$nodeJsPath = '/var/www/html/sample.js';
+
+	$ret = exec("node ".$nodeJsPath, $out, $err);
 	// This file demonstrates file upload to an S3 bucket. This is for using file upload via a
 	// file compared to just having the link. If you are doing it via link, refer to this:
 	// https://gist.github.com/keithweaver/08c1ab13b0cc47d0b8528f4bc318b49a
@@ -15,7 +18,7 @@
 	// https://packagist.org/packages/aws/aws-sdk-php 
 	//
 	// Run:$ composer require aws/aws-sdk-php
-	require 'vendor/autoload.php';
+	/*require 'vendor/autoload.php';
 	
 	use Aws\S3\S3Client;
 	use Aws\S3\Exception\S3Exception;
