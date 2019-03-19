@@ -2,7 +2,7 @@
 
 	$nodeJsPath = '/var/www/html/sample.js';
 
-	$ret = exec("cd /var/www/html/ && node sample.js &&", $out, $err);
+	$ret = exec("ls", $out, $err);
 	echo $ret;
 	// This file demonstrates file upload to an S3 bucket. This is for using file upload via a
 	// file compared to just having the link. If you are doing it via link, refer to this:
