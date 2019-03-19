@@ -1,36 +1,5 @@
 <?php
 
-	require 'vendor/autoload.php';
-
-	use Aws\S3\S3Client;
-	// Use the us-east-2 region and latest version of each client.
-	$sharedConfig = [
-	    'profile' => 'default',
-	    'region' => 'us-east-2',
-	    'version' => 'latest'
-	];
-
-	// Create an SDK class used to share configuration across clients.
-	$sdk = new Aws\Sdk($sharedConfig);
-
-	// Use an Aws\Sdk class to create the S3Client object.
-	$s3Client = $sdk->createS3();
-
-	// Send a PutObject request and get the result object.
-	$result = $s3Client->putObject([
-	    'Bucket' => 'sem1_practica1',
-	    'Key' => 'AKIAIV6MOUW7PQXEWCUQ',
-	    'Body' => 'this is the body!'
-	]);
-
-	// Download the contents of the object.
-	$result = $s3Client->getObject([
-	    'Bucket' => 'sem1_practica1',
-	    'Key' => 'AKIAIV6MOUW7PQXEWCUQ'
-	]);
-
-	// Print the body of the result by indexing into the result object.
-	echo $result['Body'];
 	// This file demonstrates file upload to an S3 bucket. This is for using file upload via a
 	// file compared to just having the link. If you are doing it via link, refer to this:
 	// https://gist.github.com/keithweaver/08c1ab13b0cc47d0b8528f4bc318b49a
@@ -46,7 +15,7 @@
 	// https://packagist.org/packages/aws/aws-sdk-php 
 	//
 	// Run:$ composer require aws/aws-sdk-php
-	/*require './vendor/autoload.php';
+	require 'vendor/autoload.php';
 	
 	use Aws\S3\S3Client;
 	use Aws\S3\Exception\S3Exception;
