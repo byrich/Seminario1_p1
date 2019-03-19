@@ -20,7 +20,7 @@ function doStuff() {
           //for Video file
           //fs.readFile('demo.avi', function (err, data) {
           //for image file        
-          fs.readFile(('/var/www/html/imagenes' + data), function (err, data) {
+          fs.readFile(('/var/www/html/imagenes' + data1), function (err, data) {
             if (err) { throw err; }
 
                var params = {Bucket: myBucket, Key: myKey, Body: data };
