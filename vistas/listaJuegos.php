@@ -15,7 +15,7 @@
   <nav class="grey darken-1 lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="http://ec2-3-17-11-100.us-east-2.compute.amazonaws.com" class="brand-logo">New game</a>
       <ul class="right ">
-        <li><a class="waves-effect waves-light btn-flat white-text" href="http://ec2-3-17-11-100.us-east-2.compute.amazonaws.com/vistas/listaJuegos.html"><i class="material-icons left">list</i>juegos</a></li>
+        <li><a class="waves-effect waves-light btn-flat white-text" href="http://ec2-3-17-11-100.us-east-2.compute.amazonaws.com/vistas/listaJuegos.php"><i class="material-icons left">list</i>juegos</a></li>
       </ul>
       <ul class="right ">
         <li><a class="waves-effect waves-light btn-flat white-text" href="http://ec2-3-17-11-100.us-east-2.compute.amazonaws.com/vistas/addJuegos.html"><i class="material-icons left">add</i>juegos</a></li>
@@ -31,15 +31,6 @@
         <h5 class="header col s12 light ">La mejor tienda en linea de video juegos! </h5>
       </div>
       <ul class="collection">
-        <li class="collection-item avatar">
-          <img src="images/yuna.jpg" alt="" class="circle">
-          <span class="title">Title</span>
-          <p>First Line <br>
-             Second Line
-          </p>
-          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-        </li>
-
         <?php
           $host = 'practica1.cclfdl028j9k.us-east-2.rds.amazonaws.com';
           $user = 'byrich';
@@ -51,20 +42,28 @@
           }
           $sql = "SELECT * FROM Juegos";
           $result = $conn->query($sql);
-          if ($result->num_rows > 0) {
-              // output data of each row
-              while($row = $result->fetch_assoc()) {
+          if ($result->num_rows > 0) 
+          {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
 
 
-                echo " <li class='collection-item avatar'>";
-                echo " <img src=". $row["img_url"]." class='material-icons circle'>";
-                echo " <span class='title'>".$row["nombre"]."</span>";
-                echo "<p>Compañia: " . $row["compania"] . " </p>";
-                echo "<p>Fecha: " . $row["compania"] . " </p>";
-                echo "<a class='secondary-content'><i class='material-icons'>grade</i></a>";
-                echo "</li>";
-              }
+              echo " <li class='collection-item avatar'>";
+              echo " <img src=". $row["img_url"]." class='material-icons circle'>";
+              echo " <span class='title'>".$row["nombre"]."</span>";
+              echo "<p>Compañia: " . $row["compania"] . " </p>";
+              echo "<p>Fecha: " . $row["fecha"] . " </p>";
+              echo "<a class='secondary-content'><i class='material-icons'>grade</i></a>";
+              echo "</li>";
+            }
           } 
+          else
+          {
+            echo " <li class='collection-item'>";
+            echo " <span class='title'> Sin juegos cargados</span>";
+            echo "<a class='secondary-content'><i class='material-icons'>grade</i></a>";
+            echo "</li>";
+          }
           $conn->close();
         ?>
         
