@@ -1,9 +1,31 @@
 <?php
 
-	$nodeJsPath = '/var/www/html/sample.js';
+	require 'vendor/autoload.php';
 
-	$ret = exec("ls", $out, $err);
-	echo $ret;
+	use Aws\S3\S3Client;
+
+	$sharedConfig = [
+	    'profile' => 'default',
+	    'region' => 'us-east-2',
+	    'version' => 'latest'
+	];
+
+	// Create an SDK class used to share configuration across clients.
+	$sdk = new Aws\Sdk($sharedConfig);
+
+	// Use an Aws\Sdk class to create the S3Client object.
+	$s3Client = $sdk->createS3();
+
+	// Send a PutObject request and get the result object.
+	$result = $s3Client->putObject([
+	    'Bucket' => 'sem1_practica1',
+	    'Key' => 'my-key.txt',
+	    'Body' => 'this is the body!'
+	]);
+
+
+	// Print the body of the result by indexing into the result object.
+	echo $result['Body'];
 	// This file demonstrates file upload to an S3 bucket. This is for using file upload via a
 	// file compared to just having the link. If you are doing it via link, refer to this:
 	// https://gist.github.com/keithweaver/08c1ab13b0cc47d0b8528f4bc318b49a
