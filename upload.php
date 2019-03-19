@@ -11,7 +11,7 @@
 	if ($conn->connect_error) {
 		die('error de conecion '. $conn-> connect_error);
 	}
-	$sql = "INSERT INTO Juegos (nombre, compania,img_url,fecha) VALUES ('".$_POST["nombre"]."', '".$_POST["compania"]."', '".$fichero_subido."', now())";
+	$sql = "INSERT INTO Juegos (nombre, compania,img_url,fecha) VALUES ('".$_POST["nombre"]."', '".$_POST["compania"]."', '../".$fichero_subido."', now())";
 	if ($conn->query($sql) === TRUE) {
 	    echo "New record created successfully";
 	}
