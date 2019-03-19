@@ -1,11 +1,22 @@
 <?php
-// En versiones de PHP anteriores a la 4.1.0, debería utilizarse $HTTP_POST_FILES en lugar
-// de $_FILES.
-
-	
 	//ruta de almacenameinto
 	$dir_subida = 'imagenes/';
 	$fichero_subido = $dir_subida . basename($_FILES['fileToUpload']['name']);
+	// insert mysql
+	$host = 'practica1.cclfdl028j9k.us-east-2.rds.amazonaws.com';
+	$user = 'byrich';
+	$pass = '24490024';
+	$db_name = 'dbDos';
+	$conn = new mysqli($host,$user,$pass,$db_name);
+	if ($conn->connect_error) {
+		die('error de conecion '. $conn-> connect_error);
+	}
+	$sql = "INSERT INTO Juegos (nombre, compania,img_url,fecha) VALUES ('".$_POST["nombre"]."', '".$_POST["compania"]."', '".$fichero_subido."', now())";
+	if ($conn->query($sql) === TRUE) {
+	    echo "New record created successfully";
+	}
+	$conn->close();
+
 	// escritura en archivo
 	$myfile = fopen("imagenes/conf.txt", "w") or die("Unable to open file!");
 	//$txt = $fichero_subido;
@@ -19,7 +30,8 @@
 	    echo "¡Posible ataque de subida de ficheros!\n";
 	}
 
-	echo 'Más información de depuración:';
+	header("Location: http://ec2-3-17-11-100.us-east-2.compute.amazonaws.com/subirImg.html");
+	die();
 	//print_r($_FILES);
 
 	//print "</pre>";
