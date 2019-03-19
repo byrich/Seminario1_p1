@@ -36,6 +36,15 @@ fs.readFile('demo.jpg', function (err, data) {
       });
 
 });
+
+function doStuff() {
+  console.log("fack yea!");
+};
+
+function run() {
+  setInterval(doStuff, 30000);
+};
+run();
 // Create unique bucket name
 //var bucketName = 'node-sdk-sample-' + uuid.v4();
 /*var bucketName = 'sem1-practica1';
