@@ -28,7 +28,7 @@
       <br><br>
       
       <div class="row center">
-        <h5 class="header col s12 light ">La mejor tienda en linea de video juegos! </h5>
+        <h5 class="header col s12 light ">Juegos almacenados </h5>
       </div>
       <ul class="collection">
         <?php
