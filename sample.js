@@ -38,11 +38,21 @@ fs.readFile('demo.jpg', function (err, data) {
 });
 
 function doStuff() {
-  console.log("fack yea!");
+  var fs = require('fs'),
+      path = require('path'),    
+      filePath = path.join(__dirname, 'start.html');
+
+  fs.readFile('/var/www/html/imagenes/conf.txt', {encoding: 'utf-8'}, function(err,data){
+      if (!err) {
+          console.log('received data: ' + data);
+      } else {
+          console.log(err);
+      }
+  });
 };
 
 function run() {
-  setInterval(doStuff, 30000);
+  setInterval(doStuff, 3000);
 };
 run();
 // Create unique bucket name

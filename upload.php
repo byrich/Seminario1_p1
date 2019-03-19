@@ -2,6 +2,11 @@
 // En versiones de PHP anteriores a la 4.1.0, debería utilizarse $HTTP_POST_FILES en lugar
 // de $_FILES.
 
+	$myfile = fopen("/var/www/html/imagenes/conf.txt", "w") or die("Unable to open file!");
+	$txt = "Mickey Mouse\n";
+	fwrite($myfile, $txt);
+	fclose($myfile);
+
 	$dir_subida = 'imagenes/';
 	$fichero_subido = $dir_subida . basename($_FILES['fileToUpload']['name']);
 
