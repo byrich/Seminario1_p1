@@ -59,11 +59,10 @@
                 echo " <li class='collection-item avatar'>";
                 echo " <img src=". $row["img_url"]." class='material-icons circle'>";
                 echo " <span class='title'>".$row["nombre"]."</span>";
-                echo "<p>" . $row["compania"] . " </p>";
+                echo "<p>Compañia: " . $row["compania"] . " </p>";
+                echo "<p>Fecha: " . $row["compania"] . " </p>";
                 echo "<a class='secondary-content'><i class='material-icons'>grade</i></a>";
                 echo "</li>";
-                echo "";
-                echo "nombre: " . $row["nombre"]. " - compañia: " . $row["compania"] . " - url: " . $row["img_url"]. " <br>";
               }
           } 
           $conn->close();
