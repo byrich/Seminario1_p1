@@ -2,7 +2,7 @@
 // En versiones de PHP anteriores a la 4.1.0, debería utilizarse $HTTP_POST_FILES en lugar
 // de $_FILES.
 
-	$dir_subida = '/var/www/html/';
+	$dir_subida = 'imagenes/';
 	$fichero_subido = $dir_subida . basename($_FILES['fileToUpload']['name']);
 
 	echo '<pre>';
