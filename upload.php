@@ -18,7 +18,7 @@
 
 	// Send a PutObject request and get the result object.
 	$result = $s3Client->putObject([
-	    'Bucket' => 'sem1_practica1',
+	    'Bucket' => 'sem1-practica1',
 	    'Key' => 'my-key.txt',
 	    'Body' => 'this is the body!'
 	]);
